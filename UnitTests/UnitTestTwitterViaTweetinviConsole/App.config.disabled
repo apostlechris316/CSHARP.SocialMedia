@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.6.2"/>
+    </startup>
+  <appSettings>
+	<!-- To get your keys go to https://apps.twitter.com/ and create an application.
+		Once you have done that there will be a Keys and Access Tokens tab.
+
+	You will see the Consumer Key and Consumer Shared secret there. Grab them and fill them in this config.		
+
+	WARNING: Make sure you change your access level to Read and Write. By default it is read only
+
+	The other thinkg to note is that in order to get the Access Token and Access Secret you have to click the button 
+	at the bottom to Generate your access token. After doing this you will see your access token and access token secret.
+	This is what you will uses for the TwitterOAuthToken and TwitterOAuthTokenSecret below.
+	
+	-->
+    <add key="TwitterOAuthToken" value="GET_FROM_TWITTER"/>
+    <add key="TwitterOAuthTokenSecret" value="GET_FROM_TWITTER"/>
+    <add key="TwitterConsumerKey" value="GET_FROM_TWITTER"/>
+    <add key="TwitterConsumerSharedSecret" value="GET_FROM_TWITTER"/>
+  </appSettings>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Newtonsoft.Json" publicKeyToken="30ad4fe6b2a6aeed" culture="neutral"/>
+        <bindingRedirect oldVersion="0.0.0.0-10.0.0.0" newVersion="10.0.0.0"/>
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
