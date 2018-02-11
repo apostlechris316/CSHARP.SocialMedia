@@ -1,0 +1,50 @@
+﻿If you are writing to twitter so a Direct Message, Tweet, Retweet etc then you need to instantiate a twitter writer:
+
+            // Set up for Twitter Auth
+            var twitterWriter = new TwitterWriter
+            {
+                ConsumerKey = twitterAuth[0],
+                ConsumerSharedSecret = twitterAuth[1],
+                OAuthToken = twitterAuth[2],
+                OAuthTokenSecret = twitterAuth[3]
+            };
+
+In the above, the ConsumerKey are those you obtained from going to apps.twitter.com and generating your keys.
+Make sure you generate the right permissions. 
+
+Next you can make your call on the twitter Writer as one of the following:
+
+	// Publish a direct message. Note taht twitter handle is whom you are direct messaging as you have already authenticated as you.
+	// Text is the text you want to publish.
+	var result = twiterWriter.PublishMessage(TwitterHandle, Text);
+
+The other writer methods work the same way.
+
+If you are reading from twitter so list of followers, Tweet for a list, etc then you need to instantiate a twitter reader:
+
+            // Set up for Twitter Auth
+            var twitterReader = new TwitterReader
+            {
+                ConsumerKey = twitterAuth[0],
+                ConsumerSharedSecret = twitterAuth[1],
+                OAuthToken = twitterAuth[2],
+                OAuthTokenSecret = twitterAuth[3]
+            };
+
+In the above, the ConsumerKey are those you obtained from going to apps.twitter.com and generating your keys.
+Make sure you generate the right permissions. 
+
+Next you can make your call on the twitter reader as one of the following:
+
+		var messagesReceivedJson = twitterReader.GetLatestMessagesReceived();
+
+In the case of a list you may need more information. So we use the listId to get the list and then get the tweets from people in that list.
+
+            var list = twitterReader.GetList(Convert.ToInt64(activityDataRow["ListId"]));
+            timelineJson = twitterReader.GetTweetsFromListAsJson(list);
+
+There are many ways to get the list. If you dont have the listid you can use the listName and the screenName that owns the list.
+
+        public ITwitterList GetList(string listName, string screenName)
+
+
