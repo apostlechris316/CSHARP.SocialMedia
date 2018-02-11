@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.0.26</Version>
+    <Authors>Chris Williams</Authors>
+    <Company>Read Watch Create</Company>
+    <Product>Social Media .NET Standard Library</Product>
+    <Description>This library is a quickstart to help you tweet</Description>
+    <Copyright>(c) 2018 Read Watch Create</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>This is not a release version. It has the basic functionality necessary for other projects.</PackageReleaseNotes>
+    <AssemblyVersion>0.0.0.26</AssemblyVersion>
+    <FileVersion>0.0.0.26</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TweetinviAPI" Version="2.1.0" />
+  </ItemGroup>
+
+</Project>
